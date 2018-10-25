@@ -11,12 +11,12 @@ import retrofit2.http.Query;
 
 public interface OldGoodTalesApi {
 
-    @GET("/debuging/index.php")
+    @GET("/testing/index6.php")
     Call<FirstQueryModel> getData(@Query("country") String country, @Query("tz") int tz);
 
-    @GET("/debuging/index.php")
+    @GET("/testing/index6.php")
     Call<FirstQueryModel> getData(@Query("country") String country, @Query("id") int id, @Query("tz") int tz);
 
-    @GET("/debuging/index.php")
+    @GET("/testing/index6.php")
     Call<List<SecondQueryModel>> getData(@Query("id") int id);
 }

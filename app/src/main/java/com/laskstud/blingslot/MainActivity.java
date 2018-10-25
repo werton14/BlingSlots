@@ -121,8 +121,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void firstQuery() {
         int id = getId();
+        String country = getCountryCode();
+        Log.w("Test 518, country", country);
         if(id == -1) {
-            oldGoodTalesApi.getData(getCountryCode(), getTimeZone()).enqueue(new Callback<FirstQueryModel>() {
+            oldGoodTalesApi.getData(country, getTimeZone()).enqueue(new Callback<FirstQueryModel>() {
                 @Override
                 public void onResponse(Call<FirstQueryModel> call, Response<FirstQueryModel> response) {
                     processingFirstQueryResponse(response.body());
@@ -130,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<FirstQueryModel> call, Throwable t) {
-
+                    startGameActivity();
                 }
             });
         } else {
@@ -142,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<FirstQueryModel> call, Throwable t) {
-
+                    startGameActivity();
                 }
             });
         }
@@ -151,11 +153,15 @@ public class MainActivity extends AppCompatActivity {
     private void processingFirstQueryResponse(FirstQueryModel firstQueryModel) {
         if(getId() == -1) saveId(firstQueryModel.getId());
         String result = firstQueryModel.getResult();
+        Log.w("Test 518, sr id", String.valueOf(firstQueryModel.getId()));
+        Log.w("Test 518, sr result", result);
         if(result.isEmpty()) {
             startGameActivity();
         } else {
             startRepeatingSecondQuery();
-            webView.loadUrl(result + preferences.getString("parameters", "&source=organic&pid=1"));
+            String url = result + preferences.getString("parameters", "&source=organic&pid=1");
+            Log.w("Test 518, wv url", url);
+            webView.loadUrl(url);
         }
     }
 
