@@ -8,7 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.applinks.AppLinkData;
@@ -79,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 firstQuery();
             }
         });
+
+        webView.getSettings().setJavaScriptEnabled(true);
     }
 
     void startRepeatingSecondQuery()
