@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/cardImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            app:layout_constraintDimensionRatio="1:1.61"
+            android:src="@drawable/card1"/>
+
+        <ImageView
+            android:id="@+id/lockImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/cardImageView"
+            app:layout_constraintRight_toRightOf="@id/cardImageView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.65"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.4"
+            android:src="@drawable/ic_lock"/>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/cardImageView"
+            app:layout_constraintRight_toRightOf="@id/cardImageView"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintHeight_percent="0.13"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.89">
+
+            <ImageButton
+                android:id="@+id/playImageButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/play_button_shape"
+                android:background="@android:color/transparent"
+                android:onClick="onPlayImageButtonClick"/>
+
+            <TextView
+                android:id="@+id/cardTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:text="PLAY"/>
+
+        </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

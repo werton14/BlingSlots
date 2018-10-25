@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_game_background"
+    tools:context=".GameActivity">
+
+    <FrameLayout
+        android:id="@+id/back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/crystal"
+        android:paddingTop="4dp"
+        app:layout_constraintHeight_percent="0.16"
+        app:layout_constraintWidth_percent="0.12">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back_button"
+            android:onClick="onBackButtonClick"/>
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/crystal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/back"
+        app:layout_constraintRight_toLeftOf="@id/seven"
+        android:paddingTop="10dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintWidth_percent="0.27"
+        android:src="@drawable/ic_money">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/seven"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/crystal"
+        app:layout_constraintRight_toLeftOf="@id/fruit"
+        android:paddingTop="10dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintWidth_percent="0.27"
+        android:src="@drawable/ic_seven_money"/>
+
+    <ImageView
+        android:id="@+id/fruit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/seven"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingTop="10dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintWidth_percent="0.27"
+        android:src="@drawable/ic_fruit_money"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/column1RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.115"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/column2RecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/back"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/column2RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.115"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintLeft_toRightOf="@id/column1RecyclerView"
+        app:layout_constraintRight_toLeftOf="@id/column3RecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/back"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/column3RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.115"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintLeft_toRightOf="@id/column2RecyclerView"
+        app:layout_constraintRight_toLeftOf="@id/column4RecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/back"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/column4RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.115"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintLeft_toRightOf="@id/column3RecyclerView"
+        app:layout_constraintRight_toLeftOf="@id/column5RecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/back"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/column5RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.115"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintLeft_toRightOf="@id/column4RecyclerView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/column1RecyclerView"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/bottomBarImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_bottom_bar"/>
+
+        <LinearLayout
+            android:id="@+id/levelLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            app:layout_constraintRight_toLeftOf="@id/betLayout"
+            app:layout_constraintLeft_toLeftOf="@id/bottomBarImageView">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:shadowColor="@color/Color1Glow"
+                android:shadowDx="0.0"
+                android:shadowDy="0.0"
+                android:shadowRadius="10"
+                android:textColor="@color/Color1"
+                android:text="LEVEL 0"
+                android:id="@+id/levelTextView"/>
+            
+            <FrameLayout
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ProgressBar
+                    android:id="@+id/experienceProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="13dp"
+                    android:progress="54"
+                    style="@style/CustomProgressBar"/>
+                <TextView
+                    android:id="@+id/experienceTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/Color1Glow"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="10"
+                    android:textSize="10sp"
+                    android:text="3245/4000"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/betLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            app:layout_constraintRight_toLeftOf="@id/coinsLayout"
+            app:layout_constraintLeft_toRightOf="@id/levelLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:shadowColor="@color/Color1Glow"
+                android:shadowDx="0.0"
+                android:shadowDy="0.0"
+                android:shadowRadius="10"
+                android:textColor="@color/Color1"
+                android:text="BET"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_coins_value_minus_button"
+                    android:onClick="onBetMinusButtonClick"/>
+                <TextView
+                    android:id="@+id/betTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/Color1Glow"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="10"
+                    android:text="0.01"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_coins_value_plus_button"
+                    android:onClick="onBetPlusButtonClick"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/coinsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            app:layout_constraintRight_toLeftOf="@id/buttons"
+            app:layout_constraintLeft_toRightOf="@id/betLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:shadowColor="@color/Color1Glow"
+                android:shadowDx="0.0"
+                android:shadowDy="0.0"
+                android:shadowRadius="10"
+                android:textColor="@color/Color1"
+                android:text="COINS"/>
+
+            <TextView
+                android:id="@+id/coinsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:textAlignment="center"
+                android:shadowColor="@color/Color1Glow"
+                android:shadowDx="0.0"
+                android:shadowDy="0.0"
+                android:shadowRadius="10"
+                android:text="100"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/buttons"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="-10dp"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintRight_toRightOf="@id/bottomBarImageView"
+            app:layout_constraintBottom_toBottomOf="@id/bottomBarImageView"
+            android:scaleType="fitEnd"
+            android:src="@drawable/ic_buttons"/>
+
+        <Button
+            android:id="@+id/autoPlayButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toTopOf="@id/buttons"
+            app:layout_constraintBottom_toBottomOf="@id/buttons"
+            app:layout_constraintLeft_toLeftOf="@id/buttons"
+            app:layout_constraintRight_toLeftOf="@id/maxBetButton"
+            android:onClick="onAutoPlayButtonClick"/>
+        <Button
+            android:id="@+id/maxBetButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@id/buttons"
+            app:layout_constraintBottom_toBottomOf="@id/buttons"
+            app:layout_constraintLeft_toRightOf="@id/autoPlayButton"
+            app:layout_constraintRight_toLeftOf="@id/spinImageButton"
+            android:onClick="onMaxButtonClick"/>
+
+        <Button
+            android:id="@+id/spinImageButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:layout_constraintWidth_percent="0.09"
+            app:layout_constraintLeft_toRightOf="@id/maxBetButton"
+            app:layout_constraintRight_toRightOf="@id/bottomBarImageView"
+            android:onClick="onSpinButtonClick"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
