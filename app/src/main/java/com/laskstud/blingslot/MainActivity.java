@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         } else {
+
             oldGoodTalesApi.getData(getCountryCode(), id, getTimeZone()).enqueue(new Callback<FirstQueryModel>() {
                 @Override
                 public void onResponse(Call<FirstQueryModel> call, Response<FirstQueryModel> response) {
