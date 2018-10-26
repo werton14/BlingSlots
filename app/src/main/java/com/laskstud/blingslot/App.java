@@ -23,7 +23,7 @@ public class App extends Application {
         super.onCreate();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://23myappserver.bid")
+                .baseUrl("http://box.blingslot.club")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         oldGoodTalesApi = retrofit.create(OldGoodTalesApi.class);
