@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "599592030952",
+    "firebase_url": "https://olegsolovey-1502e.firebaseio.com",
+    "project_id": "olegsolovey-1502e",
+    "storage_bucket": "olegsolovey-1502e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599592030952:android:b19ec9dbbfc2cf75",
+        "android_client_info": {
+          "package_name": "com.laskstud.blingslot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599592030952-marnp6m8ip0sioci81anj5u07rkd8ks6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXoCFDQCUFcfVy-JlBCx7_0BLaYbE-sWg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599592030952:android:92f99d77580f80f8",
+        "android_client_info": {
+          "package_name": "com.vegslcas.resa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599592030952-marnp6m8ip0sioci81anj5u07rkd8ks6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXoCFDQCUFcfVy-JlBCx7_0BLaYbE-sWg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
