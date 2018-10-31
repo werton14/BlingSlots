@@ -1,21 +1,17 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
-
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+<application>
+  <component name="ActionsCollector">
+    <counts>
+      <entry action="$Copy" count="11" />
+      <entry action="$Paste" count="3" />
+      <entry action="$Undo" count="51" />
+      <entry action="Android.SyncProject" count="4" />
+      <entry action="AutoIndentLines" count="2" />
+      <entry action="CloseProject" count="2" />
+      <entry action="CodeCompletion" count="27" />
+      <entry action="DialogOkAction Enter" count="2" />
+      <entry action="EditorBackSpace" count="341" />
+      <entry action="EditorChooseLookupItem" count="164" />
+      <entry action="EditorCopy" count="8" />
+      <entry action="EditorDelete" count="11" />
+      <entry action="EditorDeleteToWordEnd" count="7" />
+      <entry action="EditorDeleteToWordStart" count="18

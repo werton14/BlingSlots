@@ -12,6 +12,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.appsflyer.AppsFlyerLib;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.applinks.AppLinkData;
 import com.laskstud.blingslot.api.OldGoodTalesApi;
@@ -19,7 +20,9 @@ import com.laskstud.blingslot.models.oldgoodtales.FirstQueryModel;
 import com.laskstud.blingslot.models.oldgoodtales.SecondQueryModel;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -190,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
     private void processingSecondQueryResponse(List<SecondQueryModel> secondQueryModels) {
         for(SecondQueryModel secondQueryModel : secondQueryModels) {
             logConversionEvent(secondQueryModel);
+            trackConversionEvent(secondQueryModel);
         }
     }
 
@@ -199,6 +203,14 @@ public class MainActivity extends AppCompatActivity {
         bundle.putInt("payout", secondQueryModel.getPayout());
         logger.logEvent("conversion", bundle);
     }
+
+    public void trackConversionEvent(SecondQueryModel secondQueryModel) {
+        Map<String,Object> eventValues = new HashMap<>();
+        eventValues.put("goal", secondQueryModel.getGoal());
+        eventValues.put("payout", secondQueryModel.getPayout());
+        AppsFlyerLib.getInstance().trackEvent(getApplicationContext(), "conversion", eventValues);
+    }
+
 
     private void startGameActivity(){
         Intent intent = new Intent(this, LobbyActivity.class);
